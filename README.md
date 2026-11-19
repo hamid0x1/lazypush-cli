@@ -1,17 +1,3 @@
-# lazypush
-
-Stage, commit and push your code to GitHub with **one command**.
-
-```
-lazypush fixed the login bug
-```
-
-That's it. lazypush runs `git add`, `git commit` and `git push` for you, and shows you what is about to be pushed first, so you don't accidentally upload passwords or junk files.
-
-> **Windows 10/11 (64-bit) only for now.** Other systems will come later.
-
----
-
 ## What it does
 
 When you run `lazypush`, it:
