@@ -1,0 +1,132 @@
+name: Bug report
+description: Something in lazypush did not work as expected
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this!
+        **Please do not paste passwords, tokens or keys.** File names are fine, file contents are not.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem is it?
+      options:
+        - Install or uninstall (install.bat / uninstall.bat)
+        - Error message or crash
+        - Commit or push problem
+        - Wrong warning (a normal file was flagged red or yellow)
+        - Missed warning (a risky file was NOT flagged)
+        - Something else
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: lazypush version
+      description: The release you downloaded, from the Releases page or the zip name.
+      placeholder: "v1"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install
+    attributes:
+      label: How did you install it?
+      options:
+        - Release zip (install.bat)
+        - Built the .exe myself
+        - Running lazypush.py with Python
+    validations:
+      required: true
+
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      description: Press Win+R, type winver, press Enter.
+      placeholder: "Windows 11 23H2, 64-bit"
+    validations:
+      required: true
+
+  - type: input
+    id: git
+    attributes:
+      label: Git version
+      description: Run `git --version` in a terminal.
+      placeholder: "git version 2.47.0.windows.1"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: terminal
+    attributes:
+      label: Which terminal did you use?
+      options:
+        - Command Prompt
+        - PowerShell
+        - Windows Terminal
+        - VS Code terminal
+        - Git Bash
+        - Other
+    validations:
+      required: false
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Tell us what you saw. Screenshots are welcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The exact command you ran and what you did before it.
+      placeholder: |
+        1. Open a terminal in my project folder
+        2. Run: lazypush fixed login
+        3. Pressed Enter at the prompt
+        4. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Terminal output
+      description: Copy and paste everything lazypush printed. Remove anything private first.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: files
+    attributes:
+      label: File names involved (for warning problems)
+      description: If a file was flagged wrongly or missed, give its name or path (not its contents).
+      placeholder: "config/api_key_helper.py was flagged red but it is just code"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues and did not find the same problem.
+          required: true
+        - label: I did not paste any passwords, tokens or keys in this report.
+          required: true
